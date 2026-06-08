@@ -1,0 +1,73 @@
+match_id,group,team1,team2,score1,score2
+1,A,Mexico,South Africa,2,1
+2,A,Mexico,South Korea,1,1
+3,A,Mexico,Czechia,1,1
+4,A,South Africa,South Korea,1,2
+5,A,South Africa,Czechia,1,2
+6,A,South Korea,Czechia,1,1
+7,B,Canada,Bosnia and Herzegovina,2,1
+8,B,Canada,Qatar,2,1
+9,B,Canada,Switzerland,1,1
+10,B,Bosnia and Herzegovina,Qatar,2,1
+11,B,Bosnia and Herzegovina,Switzerland,1,2
+12,B,Qatar,Switzerland,1,2
+13,C,Brazil,Morocco,2,1
+14,C,Brazil,Haiti,3,1
+15,C,Brazil,Scotland,2,1
+16,C,Morocco,Haiti,2,1
+17,C,Morocco,Scotland,2,1
+18,C,Haiti,Scotland,1,2
+19,D,United States,Paraguay,2,1
+20,D,United States,Australia,2,1
+21,D,United States,Turkiye,2,1
+22,D,Paraguay,Australia,1,1
+23,D,Paraguay,Turkiye,1,1
+24,D,Australia,Turkiye,1,1
+25,E,Germany,Curacao,2,1
+26,E,Germany,Ivory Coast,2,1
+27,E,Germany,Ecuador,2,1
+28,E,Curacao,Ivory Coast,1,2
+29,E,Curacao,Ecuador,1,2
+30,E,Ivory Coast,Ecuador,1,1
+31,F,Netherlands,Japan,2,1
+32,F,Netherlands,Sweden,2,1
+33,F,Netherlands,Tunisia,2,1
+34,F,Japan,Sweden,1,1
+35,F,Japan,Tunisia,2,1
+36,F,Sweden,Tunisia,1,1
+37,G,Belgium,Egypt,2,1
+38,G,Belgium,Iran,2,1
+39,G,Belgium,New Zealand,2,1
+40,G,Egypt,Iran,1,1
+41,G,Egypt,New Zealand,2,1
+42,G,Iran,New Zealand,2,1
+43,H,Spain,Cape Verde,2,1
+44,H,Spain,Saudi Arabia,2,1
+45,H,Spain,Uruguay,2,1
+46,H,Cape Verde,Saudi Arabia,1,2
+47,H,Cape Verde,Uruguay,1,2
+48,H,Saudi Arabia,Uruguay,1,2
+49,I,France,Senegal,2,1
+50,I,France,Iraq,2,1
+51,I,France,Norway,2,1
+52,I,Senegal,Iraq,2,1
+53,I,Senegal,Norway,2,1
+54,I,Iraq,Norway,1,2
+55,J,Argentina,Algeria,2,1
+56,J,Argentina,Austria,2,1
+57,J,Argentina,Jordan,2,1
+58,J,Algeria,Austria,1,1
+59,J,Algeria,Jordan,2,1
+60,J,Austria,Jordan,2,1
+61,K,Portugal,DR Congo,2,1
+62,K,Portugal,Uzbekistan,2,1
+63,K,Portugal,Colombia,2,1
+64,K,DR Congo,Uzbekistan,1,1
+65,K,DR Congo,Colombia,1,2
+66,K,Uzbekistan,Colombia,1,2
+67,L,England,Croatia,2,1
+68,L,England,Ghana,2,1
+69,L,England,Panama,2,1
+70,L,Croatia,Ghana,2,1
+71,L,Croatia,Panama,2,1
+72,L,Ghana,Panama,1,1
