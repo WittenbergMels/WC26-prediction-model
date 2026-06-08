@@ -1,73 +1,73 @@
-match_id,group,team1,team2,score1,score2,xg1,xg2
-1,A,Mexico,South Africa,2,1,2.3,0.66
-2,A,Mexico,South Korea,1,1,1.33,1.01
-3,A,Mexico,Czechia,1,1,1.32,1.03
-4,A,South Africa,South Korea,1,2,0.68,2.14
-5,A,South Africa,Czechia,1,2,0.69,2.16
-6,A,South Korea,Czechia,1,1,1.15,1.19
-7,B,Canada,Bosnia and Herzegovina,2,1,1.66,0.67
-8,B,Canada,Qatar,2,1,2.37,0.57
-9,B,Canada,Switzerland,1,1,1.05,1.31
-10,B,Bosnia and Herzegovina,Qatar,2,1,1.87,0.55
-11,B,Bosnia and Herzegovina,Switzerland,1,2,0.61,1.8
-12,B,Qatar,Switzerland,1,3,0.54,2.5
-13,C,Brazil,Morocco,2,1,1.76,0.64
-14,C,Brazil,Haiti,3,0,3.09,0.25
-15,C,Brazil,Scotland,2,1,2.42,0.58
-16,C,Morocco,Haiti,3,1,2.51,0.52
-17,C,Morocco,Scotland,2,1,1.84,0.51
-18,C,Haiti,Scotland,1,2,0.63,1.83
-19,D,United States,Paraguay,2,1,1.79,0.55
-20,D,United States,Australia,2,1,1.6,0.75
-21,D,United States,Turkiye,2,1,1.7,0.64
-22,D,Paraguay,Australia,1,1,0.97,1.37
-23,D,Paraguay,Turkiye,1,1,1.08,1.26
-24,D,Australia,Turkiye,1,1,1.28,1.07
-25,E,Germany,Curacao,3,0,2.84,0.38
-26,E,Germany,Ivory Coast,2,1,1.85,0.67
-27,E,Germany,Ecuador,2,1,1.87,0.59
-28,E,Curacao,Ivory Coast,1,2,0.62,2.17
-29,E,Curacao,Ecuador,1,2,0.68,2.14
-30,E,Ivory Coast,Ecuador,1,1,1.19,1.14
-31,F,Netherlands,Japan,2,1,1.6,0.76
-32,F,Netherlands,Sweden,2,1,1.85,0.58
-33,F,Netherlands,Tunisia,2,1,2.05,0.65
-34,F,Japan,Sweden,1,1,1.42,0.93
-35,F,Japan,Tunisia,2,1,1.63,0.72
-36,F,Sweden,Tunisia,1,1,1.38,0.96
-37,G,Belgium,Egypt,2,1,1.89,0.78
-38,G,Belgium,Iran,2,1,1.79,0.8
-39,G,Belgium,New Zealand,2,1,2.26,0.68
-40,G,Egypt,Iran,1,1,1.07,1.27
-41,G,Egypt,New Zealand,2,1,1.54,0.78
-42,G,Iran,New Zealand,2,1,1.65,0.69
-43,H,Spain,Cape Verde,3,1,2.64,0.51
-44,H,Spain,Saudi Arabia,2,1,2.41,0.6
-45,H,Spain,Uruguay,2,1,1.55,0.82
-46,H,Cape Verde,Saudi Arabia,1,2,0.92,1.39
-47,H,Cape Verde,Uruguay,1,2,0.69,2.27
-48,H,Saudi Arabia,Uruguay,1,2,0.68,2.04
-49,I,France,Senegal,2,1,1.9,0.76
-50,I,France,Iraq,3,0,3.09,0.25
-51,I,France,Norway,2,1,2.28,0.66
-52,I,Senegal,Iraq,2,1,2.37,0.56
-53,I,Senegal,Norway,2,1,1.56,0.79
-54,I,Iraq,Norway,1,2,0.66,1.98
-55,J,Argentina,Algeria,2,1,2.13,0.74
-56,J,Argentina,Austria,2,1,2.17,0.73
-57,J,Argentina,Jordan,3,1,2.59,0.55
-58,J,Algeria,Austria,1,1,1.21,1.14
-59,J,Algeria,Jordan,2,1,1.63,0.7
-60,J,Austria,Jordan,2,1,1.59,0.74
-61,K,Portugal,DR Congo,3,1,2.51,0.59
-62,K,Portugal,Uzbekistan,3,1,2.54,0.57
-63,K,Portugal,Colombia,2,1,1.54,0.82
-64,K,DR Congo,Uzbekistan,1,1,1.19,1.12
-65,K,DR Congo,Colombia,1,2,0.65,2.14
-66,K,Uzbekistan,Colombia,1,2,0.65,2.18
-67,L,England,Croatia,2,1,1.68,0.71
-68,L,England,Ghana,2,1,2.36,0.62
-69,L,England,Panama,3,1,2.51,0.58
-70,L,Croatia,Ghana,2,1,1.87,0.68
-71,L,Croatia,Panama,2,1,2.02,0.72
-72,L,Ghana,Panama,1,1,1.31,1.01
+match_id,group,team1,team2,score1,score2
+1,A,Mexico,South Africa,2,1
+2,A,Mexico,South Korea,1,1
+3,A,Mexico,Czechia,1,1
+4,A,South Africa,South Korea,1,2
+5,A,South Africa,Czechia,1,2
+6,A,South Korea,Czechia,1,1
+7,B,Canada,Bosnia and Herzegovina,2,1
+8,B,Canada,Qatar,3,0
+9,B,Canada,Switzerland,1,1
+10,B,Bosnia and Herzegovina,Qatar,2,0
+11,B,Bosnia and Herzegovina,Switzerland,1,2
+12,B,Qatar,Switzerland,0,3
+13,C,Brazil,Morocco,2,1
+14,C,Brazil,Haiti,3,0
+15,C,Brazil,Scotland,2,1
+16,C,Morocco,Haiti,3,0
+17,C,Morocco,Scotland,2,0
+18,C,Haiti,Scotland,0,2
+19,D,United States,Paraguay,2,0
+20,D,United States,Australia,2,1
+21,D,United States,Turkiye,2,1
+22,D,Paraguay,Australia,1,1
+23,D,Paraguay,Turkiye,1,1
+24,D,Australia,Turkiye,1,1
+25,E,Germany,Curacao,3,0
+26,E,Germany,Ivory Coast,2,0
+27,E,Germany,Ecuador,2,0
+28,E,Curacao,Ivory Coast,1,2
+29,E,Curacao,Ecuador,1,2
+30,E,Ivory Coast,Ecuador,1,1
+31,F,Netherlands,Japan,2,0
+32,F,Netherlands,Sweden,2,1
+33,F,Netherlands,Tunisia,2,0
+34,F,Japan,Sweden,1,1
+35,F,Japan,Tunisia,2,1
+36,F,Sweden,Tunisia,2,1
+37,G,Belgium,Egypt,2,1
+38,G,Belgium,Iran,2,1
+39,G,Belgium,New Zealand,2,0
+40,G,Egypt,Iran,1,1
+41,G,Egypt,New Zealand,2,1
+42,G,Iran,New Zealand,2,1
+43,H,Spain,Cape Verde,3,0
+44,H,Spain,Saudi Arabia,3,0
+45,H,Spain,Uruguay,2,1
+46,H,Cape Verde,Saudi Arabia,1,2
+47,H,Cape Verde,Uruguay,1,2
+48,H,Saudi Arabia,Uruguay,1,2
+49,I,France,Senegal,2,1
+50,I,France,Iraq,3,0
+51,I,France,Norway,2,1
+52,I,Senegal,Iraq,3,0
+53,I,Senegal,Norway,2,1
+54,I,Iraq,Norway,0,2
+55,J,Argentina,Algeria,2,1
+56,J,Argentina,Austria,2,1
+57,J,Argentina,Jordan,3,0
+58,J,Algeria,Austria,1,1
+59,J,Algeria,Jordan,2,1
+60,J,Austria,Jordan,2,1
+61,K,Portugal,DR Congo,3,1
+62,K,Portugal,Uzbekistan,3,0
+63,K,Portugal,Colombia,2,1
+64,K,DR Congo,Uzbekistan,1,1
+65,K,DR Congo,Colombia,1,2
+66,K,Uzbekistan,Colombia,1,2
+67,L,England,Croatia,2,0
+68,L,England,Ghana,3,0
+69,L,England,Panama,3,0
+70,L,Croatia,Ghana,2,1
+71,L,Croatia,Panama,2,1
+72,L,Ghana,Panama,1,1

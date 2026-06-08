@@ -28,54 +28,54 @@ from sklearn.model_selection import cross_val_score
 # Sources: eloratings.net, transfermarkt (June 2026 approx)
 # ============================================================
 TEAMS = {
-    "France":               {"elo": 2045, "height": 183.2, "age": 27.1, "gk": 9.2, "form": 0.72, "conf": "UEFA"},
-    "Argentina":            {"elo": 2005, "height": 180.1, "age": 27.8, "gk": 9.0, "form": 0.68, "conf": "CONMEBOL"},
-    "England":              {"elo": 1981, "height": 183.5, "age": 26.5, "gk": 8.8, "form": 0.70, "conf": "UEFA"},
-    "Brazil":               {"elo": 1968, "height": 180.8, "age": 26.2, "gk": 8.5, "form": 0.65, "conf": "CONMEBOL"},
-    "Spain":                {"elo": 1962, "height": 181.0, "age": 25.8, "gk": 8.6, "form": 0.72, "conf": "UEFA"},
-    "Portugal":             {"elo": 1951, "height": 182.4, "age": 27.9, "gk": 8.4, "form": 0.68, "conf": "UEFA"},
-    "Germany":              {"elo": 1940, "height": 183.8, "age": 25.6, "gk": 8.7, "form": 0.65, "conf": "UEFA"},
-    "Netherlands":          {"elo": 1905, "height": 185.2, "age": 26.8, "gk": 8.3, "form": 0.67, "conf": "UEFA"},
-    "Belgium":              {"elo": 1885, "height": 182.6, "age": 28.4, "gk": 8.1, "form": 0.62, "conf": "UEFA"},
-    "Uruguay":              {"elo": 1858, "height": 181.3, "age": 27.0, "gk": 7.8, "form": 0.63, "conf": "CONMEBOL"},
-    "Croatia":              {"elo": 1840, "height": 184.1, "age": 29.2, "gk": 8.5, "form": 0.58, "conf": "UEFA"},
-    "United States":        {"elo": 1830, "height": 183.0, "age": 25.2, "gk": 7.6, "form": 0.62, "conf": "CONCACAF"},
-    "Colombia":             {"elo": 1818, "height": 181.2, "age": 26.4, "gk": 7.8, "form": 0.66, "conf": "CONMEBOL"},
-    "Switzerland":          {"elo": 1800, "height": 182.8, "age": 27.6, "gk": 8.2, "form": 0.64, "conf": "UEFA"},
-    "Mexico":               {"elo": 1795, "height": 178.4, "age": 26.8, "gk": 7.5, "form": 0.58, "conf": "CONCACAF"},
-    "Senegal":              {"elo": 1785, "height": 183.0, "age": 26.5, "gk": 8.0, "form": 0.65, "conf": "CAF"},
-    "Japan":                {"elo": 1778, "height": 175.8, "age": 26.2, "gk": 7.9, "form": 0.68, "conf": "AFC"},
-    "Morocco":              {"elo": 1770, "height": 181.5, "age": 26.8, "gk": 8.4, "form": 0.64, "conf": "CAF"},
-    "Canada":               {"elo": 1752, "height": 183.6, "age": 25.8, "gk": 7.8, "form": 0.60, "conf": "CONCACAF"},
-    "South Korea":          {"elo": 1738, "height": 180.2, "age": 27.1, "gk": 7.6, "form": 0.58, "conf": "AFC"},
-    "Ecuador":              {"elo": 1725, "height": 179.8, "age": 25.5, "gk": 7.4, "form": 0.56, "conf": "CONMEBOL"},
-    "Ivory Coast":          {"elo": 1712, "height": 181.8, "age": 27.4, "gk": 7.5, "form": 0.58, "conf": "CAF"},
-    "Australia":            {"elo": 1705, "height": 182.4, "age": 27.0, "gk": 7.6, "form": 0.56, "conf": "AFC"},
-    "Sweden":               {"elo": 1698, "height": 185.0, "age": 27.8, "gk": 7.8, "form": 0.60, "conf": "UEFA"},
-    "Norway":               {"elo": 1690, "height": 184.2, "age": 26.0, "gk": 7.4, "form": 0.58, "conf": "UEFA"},
-    "Algeria":              {"elo": 1675, "height": 181.4, "age": 27.2, "gk": 7.5, "form": 0.55, "conf": "CAF"},
-    "Austria":              {"elo": 1665, "height": 183.0, "age": 26.5, "gk": 7.6, "form": 0.60, "conf": "UEFA"},
-    "Turkiye":              {"elo": 1658, "height": 183.2, "age": 26.8, "gk": 7.7, "form": 0.58, "conf": "UEFA"},
-    "Paraguay":             {"elo": 1645, "height": 179.5, "age": 26.2, "gk": 7.2, "form": 0.52, "conf": "CONMEBOL"},
-    "Iran":                 {"elo": 1638, "height": 183.8, "age": 28.2, "gk": 7.8, "form": 0.56, "conf": "AFC"},
-    "Tunisia":              {"elo": 1625, "height": 181.6, "age": 27.5, "gk": 7.3, "form": 0.54, "conf": "CAF"},
-    "Egypt":                {"elo": 1615, "height": 181.2, "age": 27.8, "gk": 7.4, "form": 0.55, "conf": "CAF"},
-    "Ghana":                {"elo": 1602, "height": 181.0, "age": 26.0, "gk": 7.0, "form": 0.50, "conf": "CAF"},
-    "Bosnia and Herzegovina": {"elo": 1595, "height": 184.2, "age": 27.5, "gk": 7.2, "form": 0.52, "conf": "UEFA"},
-    "Scotland":             {"elo": 1580, "height": 183.5, "age": 27.8, "gk": 7.4, "form": 0.54, "conf": "UEFA"},
-    "Saudi Arabia":         {"elo": 1568, "height": 180.8, "age": 26.5, "gk": 7.0, "form": 0.50, "conf": "AFC"},
-    "Panama":               {"elo": 1548, "height": 181.2, "age": 27.2, "gk": 7.0, "form": 0.50, "conf": "CONCACAF"},
-    "Jordan":               {"elo": 1532, "height": 180.5, "age": 26.8, "gk": 6.8, "form": 0.48, "conf": "AFC"},
-    "New Zealand":          {"elo": 1515, "height": 183.8, "age": 26.5, "gk": 6.8, "form": 0.46, "conf": "OFC"},
-    "DR Congo":             {"elo": 1505, "height": 182.2, "age": 26.2, "gk": 6.9, "form": 0.48, "conf": "CAF"},
-    "Uzbekistan":           {"elo": 1492, "height": 181.8, "age": 25.5, "gk": 6.7, "form": 0.50, "conf": "AFC"},
-    "Cape Verde":           {"elo": 1478, "height": 181.0, "age": 26.8, "gk": 6.8, "form": 0.52, "conf": "CAF"},
-    "Czechia":              {"elo": 1748, "height": 184.0, "age": 27.8, "gk": 7.9, "form": 0.58, "conf": "UEFA"},
-    "Iraq":                 {"elo": 1420, "height": 180.2, "age": 26.5, "gk": 6.6, "form": 0.46, "conf": "AFC"},
-    "South Africa":         {"elo": 1412, "height": 181.5, "age": 26.8, "gk": 6.8, "form": 0.48, "conf": "CAF"},
-    "Curacao":              {"elo": 1395, "height": 181.0, "age": 27.5, "gk": 6.5, "form": 0.44, "conf": "CONCACAF"},
-    "Qatar":                {"elo": 1380, "height": 179.0, "age": 26.2, "gk": 6.4, "form": 0.40, "conf": "AFC"},
-    "Haiti":                {"elo": 1355, "height": 180.5, "age": 26.5, "gk": 6.2, "form": 0.38, "conf": "CONCACAF"},
+    "France":               {"elo": 2045, "height": 183.2, "age": 27.1, "gk": 9.2, "form": 0.72, "conf": "UEFA", "sp": 7.5},
+    "Argentina":            {"elo": 2005, "height": 180.1, "age": 27.8, "gk": 9.0, "form": 0.68, "conf": "CONMEBOL", "sp": 6.5},
+    "England":              {"elo": 1981, "height": 183.5, "age": 26.5, "gk": 8.8, "form": 0.70, "conf": "UEFA", "sp": 9.5},
+    "Brazil":               {"elo": 1968, "height": 180.8, "age": 26.2, "gk": 8.5, "form": 0.65, "conf": "CONMEBOL", "sp": 4.5},
+    "Spain":                {"elo": 1962, "height": 181.0, "age": 25.8, "gk": 8.6, "form": 0.72, "conf": "UEFA", "sp": 5.0},
+    "Portugal":             {"elo": 1951, "height": 182.4, "age": 27.9, "gk": 8.4, "form": 0.68, "conf": "UEFA", "sp": 6.5},
+    "Germany":              {"elo": 1940, "height": 183.8, "age": 25.6, "gk": 8.7, "form": 0.65, "conf": "UEFA", "sp": 8.5},
+    "Netherlands":          {"elo": 1905, "height": 185.2, "age": 26.8, "gk": 8.3, "form": 0.67, "conf": "UEFA", "sp": 8.5},
+    "Belgium":              {"elo": 1885, "height": 182.6, "age": 28.4, "gk": 8.1, "form": 0.62, "conf": "UEFA", "sp": 7.5},
+    "Uruguay":              {"elo": 1858, "height": 181.3, "age": 27.0, "gk": 7.8, "form": 0.63, "conf": "CONMEBOL", "sp": 7.0},
+    "Croatia":              {"elo": 1840, "height": 184.1, "age": 29.2, "gk": 8.5, "form": 0.58, "conf": "UEFA", "sp": 7.5},
+    "United States":        {"elo": 1830, "height": 183.0, "age": 25.2, "gk": 7.6, "form": 0.62, "conf": "CONCACAF", "sp": 5.5},
+    "Colombia":             {"elo": 1818, "height": 181.2, "age": 26.4, "gk": 7.8, "form": 0.66, "conf": "CONMEBOL", "sp": 5.5},
+    "Switzerland":          {"elo": 1800, "height": 182.8, "age": 27.6, "gk": 8.2, "form": 0.64, "conf": "UEFA", "sp": 6.5},
+    "Mexico":               {"elo": 1795, "height": 178.4, "age": 26.8, "gk": 7.5, "form": 0.58, "conf": "CONCACAF", "sp": 5.0},
+    "Senegal":              {"elo": 1785, "height": 183.0, "age": 26.5, "gk": 8.0, "form": 0.65, "conf": "CAF", "sp": 7.0},
+    "Japan":                {"elo": 1778, "height": 175.8, "age": 26.2, "gk": 7.9, "form": 0.68, "conf": "AFC", "sp": 4.0},
+    "Morocco":              {"elo": 1770, "height": 181.5, "age": 26.8, "gk": 8.4, "form": 0.64, "conf": "CAF", "sp": 7.5},
+    "Canada":               {"elo": 1752, "height": 183.6, "age": 25.8, "gk": 7.8, "form": 0.60, "conf": "CONCACAF", "sp": 6.0},
+    "South Korea":          {"elo": 1738, "height": 180.2, "age": 27.1, "gk": 7.6, "form": 0.58, "conf": "AFC", "sp": 5.0},
+    "Ecuador":              {"elo": 1725, "height": 179.8, "age": 25.5, "gk": 7.4, "form": 0.56, "conf": "CONMEBOL", "sp": 5.5},
+    "Ivory Coast":          {"elo": 1712, "height": 181.8, "age": 27.4, "gk": 7.5, "form": 0.58, "conf": "CAF", "sp": 5.5},
+    "Australia":            {"elo": 1705, "height": 182.4, "age": 27.0, "gk": 7.6, "form": 0.56, "conf": "AFC", "sp": 5.5},
+    "Sweden":               {"elo": 1698, "height": 185.0, "age": 27.8, "gk": 7.8, "form": 0.60, "conf": "UEFA", "sp": 9.0},
+    "Norway":               {"elo": 1690, "height": 184.2, "age": 26.0, "gk": 7.4, "form": 0.58, "conf": "UEFA", "sp": 8.5},
+    "Algeria":              {"elo": 1675, "height": 181.4, "age": 27.2, "gk": 7.5, "form": 0.55, "conf": "CAF", "sp": 6.0},
+    "Austria":              {"elo": 1665, "height": 183.0, "age": 26.5, "gk": 7.6, "form": 0.60, "conf": "UEFA", "sp": 6.5},
+    "Turkiye":              {"elo": 1658, "height": 183.2, "age": 26.8, "gk": 7.7, "form": 0.58, "conf": "UEFA", "sp": 6.5},
+    "Paraguay":             {"elo": 1645, "height": 179.5, "age": 26.2, "gk": 7.2, "form": 0.52, "conf": "CONMEBOL", "sp": 5.0},
+    "Iran":                 {"elo": 1638, "height": 183.8, "age": 28.2, "gk": 7.8, "form": 0.56, "conf": "AFC", "sp": 8.0},
+    "Tunisia":              {"elo": 1625, "height": 181.6, "age": 27.5, "gk": 7.3, "form": 0.54, "conf": "CAF", "sp": 5.5},
+    "Egypt":                {"elo": 1615, "height": 181.2, "age": 27.8, "gk": 7.4, "form": 0.55, "conf": "CAF", "sp": 5.5},
+    "Ghana":                {"elo": 1602, "height": 181.0, "age": 26.0, "gk": 7.0, "form": 0.50, "conf": "CAF", "sp": 5.5},
+    "Bosnia and Herzegovina": {"elo": 1595, "height": 184.2, "age": 27.5, "gk": 7.2, "form": 0.52, "conf": "UEFA", "sp": 7.5},
+    "Scotland":             {"elo": 1580, "height": 183.5, "age": 27.8, "gk": 7.4, "form": 0.54, "conf": "UEFA", "sp": 7.0},
+    "Saudi Arabia":         {"elo": 1568, "height": 180.8, "age": 26.5, "gk": 7.0, "form": 0.50, "conf": "AFC", "sp": 5.0},
+    "Panama":               {"elo": 1548, "height": 181.2, "age": 27.2, "gk": 7.0, "form": 0.50, "conf": "CONCACAF", "sp": 5.0},
+    "Jordan":               {"elo": 1532, "height": 180.5, "age": 26.8, "gk": 6.8, "form": 0.48, "conf": "AFC", "sp": 4.5},
+    "New Zealand":          {"elo": 1515, "height": 183.8, "age": 26.5, "gk": 6.8, "form": 0.46, "conf": "OFC", "sp": 5.5},
+    "DR Congo":             {"elo": 1505, "height": 182.2, "age": 26.2, "gk": 6.9, "form": 0.48, "conf": "CAF", "sp": 6.0},
+    "Uzbekistan":           {"elo": 1492, "height": 181.8, "age": 25.5, "gk": 6.7, "form": 0.50, "conf": "AFC", "sp": 5.0},
+    "Cape Verde":           {"elo": 1478, "height": 181.0, "age": 26.8, "gk": 6.8, "form": 0.52, "conf": "CAF", "sp": 5.5},
+    "Czechia":              {"elo": 1748, "height": 184.0, "age": 27.8, "gk": 7.9, "form": 0.58, "conf": "UEFA", "sp": 7.0},
+    "Iraq":                 {"elo": 1420, "height": 180.2, "age": 26.5, "gk": 6.6, "form": 0.46, "conf": "AFC", "sp": 5.0},
+    "South Africa":         {"elo": 1412, "height": 181.5, "age": 26.8, "gk": 6.8, "form": 0.48, "conf": "CAF", "sp": 5.0},
+    "Curacao":              {"elo": 1395, "height": 181.0, "age": 27.5, "gk": 6.5, "form": 0.44, "conf": "CONCACAF", "sp": 4.5},
+    "Qatar":                {"elo": 1380, "height": 179.0, "age": 26.2, "gk": 6.4, "form": 0.40, "conf": "AFC", "sp": 4.0},
+    "Haiti":                {"elo": 1355, "height": 180.5, "age": 26.5, "gk": 6.2, "form": 0.38, "conf": "CONCACAF", "sp": 4.5},
 }
 
 # ============================================================
@@ -293,71 +293,71 @@ HIST_ELO = {
 # Per-team stable features (height, home temp, confederation)
 TEAM_META = {
     # team: {height_cm, home_temp_c, conf}
-    "Netherlands":      {"height": 185.2, "home_temp": 12, "conf": "UEFA"},
-    "Senegal":          {"height": 183.0, "home_temp": 30, "conf": "CAF"},
-    "Ecuador":          {"height": 179.8, "home_temp": 18, "conf": "CONMEBOL"},
-    "Qatar":            {"height": 179.0, "home_temp": 38, "conf": "AFC"},
-    "England":          {"height": 183.5, "home_temp": 10, "conf": "UEFA"},
-    "Iran":             {"height": 183.8, "home_temp": 28, "conf": "AFC"},
+    "Netherlands":      {"height": 185.2, "home_temp": 12, "conf": "UEFA", "sp": 8.5},
+    "Senegal":          {"height": 183.0, "home_temp": 30, "conf": "CAF", "sp": 7.0},
+    "Ecuador":          {"height": 179.8, "home_temp": 18, "conf": "CONMEBOL", "sp": 5.5},
+    "Qatar":            {"height": 179.0, "home_temp": 38, "conf": "AFC", "sp": 4.0},
+    "England":          {"height": 183.5, "home_temp": 10, "conf": "UEFA", "sp": 9.5},
+    "Iran":             {"height": 183.8, "home_temp": 28, "conf": "AFC", "sp": 8.0},
     "USA":              {"height": 183.0, "home_temp": 20, "conf": "CONCACAF"},
-    "United States":    {"height": 183.0, "home_temp": 20, "conf": "CONCACAF"},
+    "United States":    {"height": 183.0, "home_temp": 20, "conf": "CONCACAF", "sp": 5.5},
     "Wales":            {"height": 182.0, "home_temp": 10, "conf": "UEFA"},
-    "Argentina":        {"height": 180.1, "home_temp": 15, "conf": "CONMEBOL"},
-    "Saudi Arabia":     {"height": 180.8, "home_temp": 38, "conf": "AFC"},
-    "Mexico":           {"height": 178.4, "home_temp": 22, "conf": "CONCACAF"},
+    "Argentina":        {"height": 180.1, "home_temp": 15, "conf": "CONMEBOL", "sp": 6.5},
+    "Saudi Arabia":     {"height": 180.8, "home_temp": 38, "conf": "AFC", "sp": 5.0},
+    "Mexico":           {"height": 178.4, "home_temp": 22, "conf": "CONCACAF", "sp": 5.0},
     "Poland":           {"height": 184.0, "home_temp": 10, "conf": "UEFA"},
-    "France":           {"height": 183.2, "home_temp": 12, "conf": "UEFA"},
-    "Australia":        {"height": 182.4, "home_temp": 18, "conf": "AFC"},
+    "France":           {"height": 183.2, "home_temp": 12, "conf": "UEFA", "sp": 7.5},
+    "Australia":        {"height": 182.4, "home_temp": 18, "conf": "AFC", "sp": 5.5},
     "Denmark":          {"height": 185.0, "home_temp": 10, "conf": "UEFA"},
-    "Tunisia":          {"height": 181.6, "home_temp": 22, "conf": "CAF"},
-    "Spain":            {"height": 181.0, "home_temp": 15, "conf": "UEFA"},
-    "Germany":          {"height": 183.8, "home_temp": 12, "conf": "UEFA"},
-    "Japan":            {"height": 175.8, "home_temp": 20, "conf": "AFC"},
+    "Tunisia":          {"height": 181.6, "home_temp": 22, "conf": "CAF", "sp": 5.5},
+    "Spain":            {"height": 181.0, "home_temp": 15, "conf": "UEFA", "sp": 5.0},
+    "Germany":          {"height": 183.8, "home_temp": 12, "conf": "UEFA", "sp": 8.5},
+    "Japan":            {"height": 175.8, "home_temp": 20, "conf": "AFC", "sp": 4.0},
     "Costa Rica":       {"height": 179.5, "home_temp": 25, "conf": "CONCACAF"},
-    "Belgium":          {"height": 182.6, "home_temp": 10, "conf": "UEFA"},
-    "Morocco":          {"height": 181.5, "home_temp": 22, "conf": "CAF"},
-    "Croatia":          {"height": 184.1, "home_temp": 14, "conf": "UEFA"},
-    "Canada":           {"height": 183.6, "home_temp": 10, "conf": "CONCACAF"},
-    "Brazil":           {"height": 180.8, "home_temp": 26, "conf": "CONMEBOL"},
+    "Belgium":          {"height": 182.6, "home_temp": 10, "conf": "UEFA", "sp": 7.5},
+    "Morocco":          {"height": 181.5, "home_temp": 22, "conf": "CAF", "sp": 7.5},
+    "Croatia":          {"height": 184.1, "home_temp": 14, "conf": "UEFA", "sp": 7.5},
+    "Canada":           {"height": 183.6, "home_temp": 10, "conf": "CONCACAF", "sp": 6.0},
+    "Brazil":           {"height": 180.8, "home_temp": 26, "conf": "CONMEBOL", "sp": 4.5},
     "Cameroon":         {"height": 182.5, "home_temp": 28, "conf": "CAF"},
     "Serbia":           {"height": 184.5, "home_temp": 12, "conf": "UEFA"},
-    "Switzerland":      {"height": 182.8, "home_temp": 10, "conf": "UEFA"},
-    "Portugal":         {"height": 182.4, "home_temp": 16, "conf": "UEFA"},
-    "Uruguay":          {"height": 181.3, "home_temp": 15, "conf": "CONMEBOL"},
-    "South Korea":      {"height": 180.2, "home_temp": 18, "conf": "AFC"},
-    "Ghana":            {"height": 181.0, "home_temp": 29, "conf": "CAF"},
+    "Switzerland":      {"height": 182.8, "home_temp": 10, "conf": "UEFA", "sp": 6.5},
+    "Portugal":         {"height": 182.4, "home_temp": 16, "conf": "UEFA", "sp": 6.5},
+    "Uruguay":          {"height": 181.3, "home_temp": 15, "conf": "CONMEBOL", "sp": 7.0},
+    "South Korea":      {"height": 180.2, "home_temp": 18, "conf": "AFC", "sp": 5.0},
+    "Ghana":            {"height": 181.0, "home_temp": 29, "conf": "CAF", "sp": 5.5},
     "Russia":           {"height": 183.0, "home_temp": 8,  "conf": "UEFA"},
-    "Egypt":            {"height": 181.2, "home_temp": 30, "conf": "CAF"},
+    "Egypt":            {"height": 181.2, "home_temp": 30, "conf": "CAF", "sp": 5.5},
     "Peru":             {"height": 175.5, "home_temp": 18, "conf": "CONMEBOL"},
     "Iceland":          {"height": 184.0, "home_temp": 5,  "conf": "UEFA"},
     "Nigeria":          {"height": 181.5, "home_temp": 30, "conf": "CAF"},
     "Italy":            {"height": 183.5, "home_temp": 16, "conf": "UEFA"},
     "Turkey":           {"height": 183.2, "home_temp": 18, "conf": "UEFA"},
-    "Turkiye":          {"height": 183.2, "home_temp": 18, "conf": "UEFA"},
+    "Turkiye":          {"height": 183.2, "home_temp": 18, "conf": "UEFA", "sp": 6.5},
     "Finland":          {"height": 182.5, "home_temp": 6,  "conf": "UEFA"},
     "North Macedonia":  {"height": 182.0, "home_temp": 14, "conf": "UEFA"},
-    "Austria":          {"height": 183.0, "home_temp": 10, "conf": "UEFA"},
+    "Austria":          {"height": 183.0, "home_temp": 10, "conf": "UEFA", "sp": 6.5},
     "Ukraine":          {"height": 183.0, "home_temp": 10, "conf": "UEFA"},
     "Czech Republic":   {"height": 184.0, "home_temp": 10, "conf": "UEFA"},
-    "Czechia":          {"height": 184.0, "home_temp": 10, "conf": "UEFA"},
-    "Scotland":         {"height": 183.5, "home_temp": 8,  "conf": "UEFA"},
-    "Sweden":           {"height": 185.0, "home_temp": 8,  "conf": "UEFA"},
+    "Czechia":          {"height": 184.0, "home_temp": 10, "conf": "UEFA", "sp": 7.0},
+    "Scotland":         {"height": 183.5, "home_temp": 8,  "conf": "UEFA", "sp": 7.0},
+    "Sweden":           {"height": 185.0, "home_temp": 8,  "conf": "UEFA", "sp": 9.0},
     "Slovakia":         {"height": 183.5, "home_temp": 10, "conf": "UEFA"},
     "Hungary":          {"height": 182.0, "home_temp": 12, "conf": "UEFA"},
-    "Colombia":         {"height": 181.2, "home_temp": 22, "conf": "CONMEBOL"},
+    "Colombia":         {"height": 181.2, "home_temp": 22, "conf": "CONMEBOL", "sp": 5.5},
     "Chile":            {"height": 178.5, "home_temp": 14, "conf": "CONMEBOL"},
-    "Paraguay":         {"height": 179.5, "home_temp": 25, "conf": "CONMEBOL"},
+    "Paraguay":         {"height": 179.5, "home_temp": 25, "conf": "CONMEBOL", "sp": 5.0},
     "Bolivia":          {"height": 173.0, "home_temp": 10, "conf": "CONMEBOL"},
     "Venezuela":        {"height": 179.5, "home_temp": 26, "conf": "CONMEBOL"},
     "Georgia":          {"height": 181.0, "home_temp": 14, "conf": "UEFA"},
     "Albania":          {"height": 181.5, "home_temp": 15, "conf": "UEFA"},
     "Slovenia":         {"height": 182.5, "home_temp": 11, "conf": "UEFA"},
     "Romania":          {"height": 182.0, "home_temp": 11, "conf": "UEFA"},
-    "Ivory Coast":      {"height": 181.8, "home_temp": 30, "conf": "CAF"},
-    "Algeria":          {"height": 181.4, "home_temp": 25, "conf": "CAF"},
+    "Ivory Coast":      {"height": 181.8, "home_temp": 30, "conf": "CAF", "sp": 5.5},
+    "Algeria":          {"height": 181.4, "home_temp": 25, "conf": "CAF", "sp": 6.0},
     "Burkina Faso":     {"height": 178.0, "home_temp": 30, "conf": "CAF"},
     "Ethiopia":         {"height": 172.0, "home_temp": 22, "conf": "CAF"},
-    "Cape Verde":       {"height": 181.0, "home_temp": 25, "conf": "CAF"},
+    "Cape Verde":       {"height": 181.0, "home_temp": 25, "conf": "CAF", "sp": 5.5},
     "Zimbabwe":         {"height": 179.5, "home_temp": 22, "conf": "CAF"},
     "Guinea":           {"height": 179.0, "home_temp": 28, "conf": "CAF"},
     "Malawi":           {"height": 176.0, "home_temp": 22, "conf": "CAF"},
@@ -372,20 +372,20 @@ TEAM_META = {
     "Sierra Leone":     {"height": 178.0, "home_temp": 28, "conf": "CAF"},
     "Equatorial Guinea":{"height": 177.0, "home_temp": 28, "conf": "CAF"},
     "Jamaica":          {"height": 180.5, "home_temp": 28, "conf": "CONCACAF"},
-    "Panama":           {"height": 181.2, "home_temp": 28, "conf": "CONCACAF"},
+    "Panama":           {"height": 181.2, "home_temp": 28, "conf": "CONCACAF", "sp": 5.0},
     "Greece":           {"height": 183.5, "home_temp": 16, "conf": "UEFA"},
     "Honduras":         {"height": 178.5, "home_temp": 26, "conf": "CONCACAF"},
     "Bosnia":           {"height": 184.2, "home_temp": 13, "conf": "UEFA"},
-    "Bosnia and Herzegovina": {"height": 184.2, "home_temp": 13, "conf": "UEFA"},
-    "Norway":           {"height": 184.2, "home_temp": 6,  "conf": "UEFA"},
-    "Jordan":           {"height": 180.5, "home_temp": 28, "conf": "AFC"},
-    "New Zealand":      {"height": 183.8, "home_temp": 14, "conf": "OFC"},
-    "DR Congo":         {"height": 182.2, "home_temp": 28, "conf": "CAF"},
-    "Uzbekistan":       {"height": 181.8, "home_temp": 25, "conf": "AFC"},
-    "Curacao":          {"height": 181.0, "home_temp": 30, "conf": "CONCACAF"},
-    "Haiti":            {"height": 180.5, "home_temp": 30, "conf": "CONCACAF"},
-    "South Africa":     {"height": 181.5, "home_temp": 18, "conf": "CAF"},
-    "Iraq":             {"height": 180.2, "home_temp": 40, "conf": "AFC"},
+    "Bosnia and Herzegovina": {"height": 184.2, "home_temp": 13, "conf": "UEFA", "sp": 7.5},
+    "Norway":           {"height": 184.2, "home_temp": 6,  "conf": "UEFA", "sp": 8.5},
+    "Jordan":           {"height": 180.5, "home_temp": 28, "conf": "AFC", "sp": 4.5},
+    "New Zealand":      {"height": 183.8, "home_temp": 14, "conf": "OFC", "sp": 5.5},
+    "DR Congo":         {"height": 182.2, "home_temp": 28, "conf": "CAF", "sp": 6.0},
+    "Uzbekistan":       {"height": 181.8, "home_temp": 25, "conf": "AFC", "sp": 5.0},
+    "Curacao":          {"height": 181.0, "home_temp": 30, "conf": "CONCACAF", "sp": 4.5},
+    "Haiti":            {"height": 180.5, "home_temp": 30, "conf": "CONCACAF", "sp": 4.5},
+    "South Africa":     {"height": 181.5, "home_temp": 18, "conf": "CAF", "sp": 5.0},
+    "Iraq":             {"height": 180.2, "home_temp": 40, "conf": "AFC", "sp": 5.0},
 }
 
 # GK quality approximations at tournament time (1-10 scale)
@@ -1110,6 +1110,16 @@ def predict_xg(team1, team2, match_id, model, scaler):
     xg1 += BIG3_WEIGHT * (b1 - b2)
     xg2 += BIG3_WEIGHT * (b2 - b1)
 
+    # Set-piece adjustment: each rating point above opponent adds 0.07 xG.
+    # Scale: 5.5 = average, 9.5 = elite (England), 4.0 = weak (Japan, Qatar).
+    # A 5-point gap (e.g. England vs Japan) → +0.35 xG — matches the ~30%
+    # share of goals that typically come from set pieces in international football.
+    SP_WEIGHT = 0.07
+    sp1 = TEAMS[team1].get("sp", 5.5)
+    sp2 = TEAMS[team2].get("sp", 5.5)
+    xg1 += SP_WEIGHT * (sp1 - sp2)
+    xg2 += SP_WEIGHT * (sp2 - sp1)
+
     xg1 = max(0.25, xg1)
     xg2 = max(0.25, xg2)
     return xg1, xg2
@@ -1570,18 +1580,18 @@ def export_excel(all_results, group_map, model, scaler, path):
     # ── Sheet 4: Team Features ───────────────────────────────
     ws4 = wb.create_sheet("Team Features")
     feat_hdrs = ["Team", "ELO", "Height cm", "Avg Age", "GK Rating",
-                 "Form %", "Big3 Players", "Big3 %"]
+                 "Form %", "SP Rating", "Big3 Players", "Big3 %"]
     for c, h in enumerate(feat_hdrs, 1):
         hdr_cell(ws4, 1, c, h, fill=HDR_FILL, font=HDR_FONT)
     set_col_width(ws4, 1, 28)
-    for c in range(2, 9):
+    for c in range(2, 10):
         set_col_width(ws4, c, 13)
 
     for row_i, (team, data) in enumerate(sorted(TEAMS.items()), 2):
         b3 = BIG3_PLAYERS.get(team, 0)
         vals = [team, data["elo"], TEAM_META.get(team, {}).get("height", 181.5),
                 data["age"], data["gk"], round(data["form"]*100),
-                b3, f"{round(b3/SQUAD_SIZE*100)}%"]
+                data.get("sp", 5.5), b3, f"{round(b3/SQUAD_SIZE*100)}%"]
         for c, v in enumerate(vals, 1):
             cell = ws4.cell(row=row_i, column=c, value=v)
             cell.border = border
@@ -1629,6 +1639,18 @@ def main():
 
     excel_path = "/Users/melswittenberg/Documents/github/WC26 - prediction model/WC2026_Predictions.xlsx"
     export_excel(all_results, group_map, model, scaler, excel_path)
+
+    # CSV output — matches output_template 1.csv format exactly
+    csv_path = "/Users/melswittenberg/Documents/github/WC26 - prediction model/output.csv"
+    results_by_id = {mid: (grp, t1, t2, s1, s2)
+                     for mid, grp, t1, t2, s1, s2 in all_results}
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["match_id", "group", "team1", "team2", "score1", "score2"])
+        for mid, grp, t1, t2 in MATCHES:
+            grp2, t1r, t2r, s1, s2 = results_by_id[mid]
+            writer.writerow([mid, grp2, t1r, t2r, s1, s2])
+    print(f"CSV   → {csv_path}")
 
     print("\n--- Predicted Qualifiers (Top 2 per group) ---")
     for group_id in sorted(group_map.keys()):
